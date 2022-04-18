@@ -1,6 +1,6 @@
 console.log("page loaded")
 
-var connections = [3,450]
+var connections = [2,450]
 
 function drawConnections(){
     console.log("drawing connections")
@@ -22,4 +22,16 @@ function buttonpress(element){
 
 function buttonUnpress(element){
     element.classList.remove("pressed")
+}
+function remove(element){
+    element.parentElement.parentElement.remove()
+}
+
+function addFriend(){
+    connections[0]--;
+    connections[1]++
+}
+
+function badFriend(){
+    connections[0]--
 }
