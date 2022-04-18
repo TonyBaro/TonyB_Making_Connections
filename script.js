@@ -14,24 +14,15 @@ function nameChange(){
     document.getElementById("userpic").src = "Assets/images/todd-s.jpg"
 }
 
-function buttonpress(element){
-    console.log("pressing")
-    element.classList.add("pressed")
+function addFriend(element){
+    connections[0]--;
+    connections[1]++;
+    element.parentElement.parentElement.remove();
     drawConnections()
 }
 
-function buttonUnpress(element){
-    element.classList.remove("pressed")
-}
-function remove(element){
-    element.parentElement.parentElement.remove()
-}
-
-function addFriend(){
+function badFriend(element){
     connections[0]--;
-    connections[1]++
-}
-
-function badFriend(){
-    connections[0]--
+    element.parentElement.parentElement.remove();
+    drawConnections()
 }
