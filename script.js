@@ -2,6 +2,8 @@ console.log("page loaded")
 
 var connections = [2,450]
 
+var newfriends = []
+
 function drawConnections(){
     console.log("drawing connections")
     document.querySelector(".connect p").innerHTML = connections[0]
@@ -16,7 +18,9 @@ function nameChange(){
 
 function addFriend(element){
     connections[0]--;
-    connections[1]++;
+    connections[1]++;   
+    newfriends.push(element.parentElement.parentElement.innerText);
+    console.log(newfriends)
     element.parentElement.parentElement.remove();
     drawConnections()
 }
